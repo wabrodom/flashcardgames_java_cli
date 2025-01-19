@@ -32,7 +32,7 @@ public class StartArgs {
         String[] importExport = new String[2]; // Reference type default is Null
 
         for (int i = 0; i < args.length - 1; i++) {
-
+            
             if (args[i].equals("-import") && !args[i+1].equals("-export")) {
                 importExport[0] = args[i + 1];
             }

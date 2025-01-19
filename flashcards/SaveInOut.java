@@ -2,6 +2,7 @@ package flashcards;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class SaveInOut {
@@ -49,10 +50,16 @@ public class SaveInOut {
      */
 
     public static String scanner() {
-        // try catch when noLinefound
-        String inputValue = scanner.nextLine();
-        inputOutput.add(inputValue + "\n");
-        return inputValue;
+        try {
+            String inputValue = scanner.nextLine();
+            inputOutput.add(inputValue + "\n");
+            return inputValue;
+            
+        } catch (NoSuchElementException e) {
+            System.out.printf("\nProgram exited.%n");
+            System.exit(0);
+            return null;
+        }
     }
 
 }
